@@ -9,12 +9,12 @@ app = Flask(__name__)
 
 # Load Google Sheets API credentials
 credentials = service_account.Credentials.from_service_account_file(
-    '/Users/Haldur/Downloads/dynamicdata-412611-69bee72313c0.json',
+    '/your/json/credentials/file.json',
     scopes=['https://www.googleapis.com/auth/spreadsheets.readonly']
 )
 
 # Google Sheets API spreadsheet ID and range
-spreadsheet_id = '1Ixbw0-YvhuIWj0ZSn0L-3nnSkWKznvUjYwpiBQsILYk'
+spreadsheet_id = 'your-spreadsheet-id'
 range_name = 'A1:H173' # Didn't work with "SoloTaco!A1:H173"
 
 # Fetch data from Google Sheets
@@ -35,14 +35,4 @@ def table():
 if __name__ == "__main__":
     app.run(debug=True)
 
-# headings = ("Name", "Role", "Salary") # tuple
-# data = (                              # tuple of tuples
-#     ("Lou Scarpelli", "CEO", "$99,999.99"),
-#     ("Justin Scarpelli", "Custodian", "$12,345.67"),
-#     ("Hillary X", "Finance", "66,666.66"),
-#     ("Keedro Hydro", "HR", "$65,432.10")
-# )
-# @app.route("/")
-# def table():
-#     return render_template("table.html", headings=headings, data=data)
 
