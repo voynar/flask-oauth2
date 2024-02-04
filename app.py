@@ -3,7 +3,7 @@ from google.oauth2 import service_account
 from googleapiclient.discovery import build
 from dotenv import load_dotenv
 from flask import Flask, request
-# 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
+
 load_dotenv()
 app = Flask(__name__)
 
